@@ -1,0 +1,34 @@
+super + Return
+	st
+super + s
+	scpad
+super + w
+	firefox
+super + d
+	~/src/Discord/Discord
+super + shift + E
+	~/.local/scripts/exit.sh
+super + t
+	telegram-desktop
+super + r
+	st -e ranger
+super + shift + R
+	thunar
+super + shift + G
+	gimp
+super + a
+	mypaint
+super + {equal, minus, BackSpace}
+	~/.local/scripts/vol.sh {up, down, toggle}
+super + c
+	screenshot
+super + shift + C
+	screenshot select
+super + control + c
+	screenshot window
+super + shift + P
+	mpv $(xclip -o)
+super + m
+	dmount
+super + control + m
+	dumount
