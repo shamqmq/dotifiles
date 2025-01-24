@@ -1,16 +1,37 @@
-require("mappings")
-require("options")
-require("lazy_nvim")
+vim.g.base46_cache = vim.fn.stdpath "data" .. "/base46/"
+vim.g.mapleader = " "
 
-if vim.fn.has("persistent_undo") == 1 then
-    local target_path = vim.fn.expand('~/.undodir')
+-- bootstrap lazy and all plugins
+local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
 
-    -- create the directory and any parent directories
-    -- if the location does not exist.
-    if vim.fn.isdirectory(target_path) == 0 then
-        vim.fn.mkdir(target_path, "p")
-    end
-
-    vim.o.undodir = target_path
-    vim.o.undofile = true
+if not vim.uv.fs_stat(lazypath) then
+  local repo = "https://github.com/folke/lazy.nvim.git"
+  vim.fn.system { "git", "clone", "--filter=blob:none", repo, "--branch=stable", lazypath }
 end
+
+vim.opt.rtp:prepend(lazypath)
+
+local lazy_config = require "configs.lazy"
+
+-- load plugins
+require("lazy").setup({
+  {
+    "NvChad/NvChad",
+    lazy = false,
+    branch = "v2.5",
+    import = "nvchad.plugins",
+  },
+
+  { import = "plugins" },
+}, lazy_config)
+
+-- load theme
+dofile(vim.g.base46_cache .. "defaults")
+dofile(vim.g.base46_cache .. "statusline")
+
+require "options"
+require "nvchad.autocmds"
+
+vim.schedule(function()
+  require "mappings"
+end)

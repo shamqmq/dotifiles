@@ -1,21 +1,17 @@
 super + Return
-	st
+	exec $TERM
 super + s
 	scpad
 super + w
-	firefox
-super + d
-	~/src/Discord/Discord
+	~/src/zen/zen
 super + shift + E
 	~/.local/scripts/exit.sh
 super + t
 	telegram-desktop
 super + r
-	st -e ranger
+	$TERM -e ranger
 super + shift + R
 	thunar
-super + shift + G
-	gimp
 super + a
 	mypaint
 super + {equal, minus, BackSpace}
@@ -32,3 +28,5 @@ super + m
 	dmount
 super + control + m
 	dumount
+super + d
+	~/src/Discord/Discord

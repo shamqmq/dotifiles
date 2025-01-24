@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/keton/proj/test'
+let g:netrw_dirhist_4='/home/keton/dots/.config/sxhkd'
+let g:netrw_dirhist_3='/home/keton/dots/.config'
+let g:netrw_dirhist_2='/home/keton/dots'
+let g:netrw_dirhist_1='/home/keton'
+let g:netrw_dirhist_0='/home/keton/.config/nvim/lua/themes'
+let g:netrw_dirhist_9='/home/keton/.config/nvim/lua'
+let g:netrw_dirhist_8='/home/keton/.config/nvim'
+let g:netrw_dirhist_7='/home/keton/.config'
+let g:netrw_dirhist_6='/home/keton'

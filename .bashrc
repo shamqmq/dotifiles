@@ -1,4 +1,3 @@
-# .bashrc
 
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
@@ -39,3 +38,7 @@ cd_to_dir() {
 }
 alias cds='cd_to_dir'
 alias cdd='cds $(pwd)'
+
+
+#env vars
+source .envrc
